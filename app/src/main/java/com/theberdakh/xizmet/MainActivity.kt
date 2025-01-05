@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.theberdakh.xizmet.screens.AllServicesScreen
 import com.theberdakh.xizmet.ui.theme.XizmetTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,15 +19,19 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+
             XizmetTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+               MainScreen()
             }
         }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun MainScreen(modifier: Modifier = Modifier) {
+    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+        AllServicesScreen(modifier = Modifier.padding(innerPadding))
     }
 }
 
@@ -36,12 +41,4 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         text = "Hello $name!",
         modifier = modifier
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    XizmetTheme {
-        Greeting("Android")
-    }
 }
