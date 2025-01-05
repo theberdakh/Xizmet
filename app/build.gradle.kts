@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.theberdakh.xizmet"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.theberdakh.xizmet"
